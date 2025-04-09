@@ -3,15 +3,12 @@
 #include "sort.h"
 
 /**
- * selection_sort - Sorts an array of integers in ascending order using the
- *                  Selection sort algorithm.
- * @array: Pointer to the array of integers to be sorted.
+ * selection_sort - Sorts an array of integers in ascending order
+ *                  using the Selection sort algorithm.
+ * @array: The array to be sorted.
  * @size: The size of the array.
  *
- * Description: This function iterates through the array multiple times,
- *              comparing adjacent elements and swapping them if they are
- *              in the wrong order. The process is repeated until the array
- *              is sorted.
+ * Description: Prints the array after each swap.
  */
 void selection_sort(int *array, size_t size)
 {
