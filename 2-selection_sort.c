@@ -30,13 +30,13 @@ void selection_sort(int *array, size_t size)
 			if (array[j] < array[index_mini])
 				index_mini = j;
 		}
-			if (index_mini != i)
-			{
-				tmp = array[i];
-				array[i] = array[index_mini];
-				array[index_mini] = tmp;
 
-				print_array(array, size);
-			}
+		if (index_mini != i)
+		{
+			tmp = array[i];
+			array[i] = array[index_mini];
+			array[index_mini] = tmp;
+			print_array(array, size);
+		}
 	}
 }
