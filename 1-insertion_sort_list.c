@@ -19,6 +19,8 @@ void insertion_sort_list(listint_t **list)
 	while (current != NULL)
 	{
 		temp = current;
+		current = current->next;
+
 		while (temp->prev != NULL && temp->n < temp->prev->n)
 		{
 			listint_t *prev = temp->prev;
@@ -39,6 +41,5 @@ void insertion_sort_list(listint_t **list)
 				*list = temp;
 			print_list(*list);
 		}
-		current = current->next;
 	}
 }
