@@ -5,12 +5,14 @@
 /**
  * insertion_sort_list - sorts a doubly linked list of integers in ascending
  *                     order using the Insertion sort algorithm
+ *
  * @list: pointer to the head of the list
  */
 
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *current, *temp;
+	listint_t *next, *prev;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
@@ -23,8 +25,8 @@ void insertion_sort_list(listint_t **list)
 
 		while (temp->prev != NULL && temp->n < temp->prev->n)
 		{
-			listint_t *prev = temp->prev;
-			listint_t *next = temp->next;
+			prev = temp->prev;
+			next = temp->next;
 
 			if (prev->prev != NULL)
 				prev->prev->next = temp;
