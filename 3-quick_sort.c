@@ -5,15 +5,21 @@
 * swap - swaps two elements in an array
 * @a: first element
 * @b: second element
+* @array: array being sorted
+* @size: size of the array
 */
 
-void swap(int *a, int *b)
+void swap(int *a, int *b, int *array, size_t size)
 {
-	int temp;
+	if (*a != *b)
+	{
+		int temp;
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+		temp = *a;
+		*a = *b;
+		*b = temp;
+		print_array(array, size);
+	}
 }
 
 /**
@@ -29,28 +35,20 @@ void swap(int *a, int *b)
 int partition(int *arr, int low, int high, size_t size)
 {
 	int pivot = arr[high];
-
 	int i = low - 1;
-
 	int j;
 
-	for (j = low ; j <= high - 1 ; j++)
+	for (j = low ; j < high ; j++)
 	{
-		if (arr[j] < pivot)
+		if (arr[j] <= pivot)
 		{
 			i++;
 			if (i != j)
-			{
-				swap(&arr[i], &arr[j]);
-			    print_array(arr, size);
-			}
+				swap(&arr[i], &arr[j], array, size);
 		}
 	}
 	if (i + 1 != high)
-	{
-		swap(&arr[i + 1], &arr[high]);
-		print_array(arr, size);
-	}
+		swap(&arr[i + 1], &arr[high], array, size);
 	return (i + 1);
 }
 
