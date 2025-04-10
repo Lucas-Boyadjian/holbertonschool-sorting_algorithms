@@ -24,7 +24,7 @@ void swap(int *a, int *b, int *array, size_t size)
 
 /**
 * partition - partitions the array using lomuto scheme
-* @arr: array to partition
+* @array: array to partition
 * @low: starting index
 * @high: ending index
 * @size: size of the array
@@ -32,44 +32,44 @@ void swap(int *a, int *b, int *array, size_t size)
 * Return: index of the pivot's final position
 */
 
-int partition(int *arr, int low, int high, size_t size)
+int partition(int *array, int low, int high, size_t size)
 {
-	int pivot = arr[high];
+	int pivot = array[high];
 	int i = low - 1;
 	int j;
 
 	for (j = low ; j < high ; j++)
 	{
-		if (arr[j] <= pivot)
+		if (array[j] <= pivot)
 		{
 			i++;
 			if (i != j)
-				swap(&arr[i], &arr[j], array, size);
+				swap(&array[i], &array[j], array, size);
 		}
 	}
 	if (i + 1 != high)
-		swap(&arr[i + 1], &arr[high], array, size);
+		swap(&array[i + 1], &array[high], array, size);
 	return (i + 1);
 }
 
 /**
 * quicksort_recursive - recursively implements quick sort
-* @arr: array to sort
+* @array: array to sort
 * @low: starting index
 * @high: ending index
 * @size: size of the array
 */
 
-void quicksort_recursive(int *arr, int low, int high, size_t size)
+void quicksort_recursive(int *array, int low, int high, size_t size)
 {
 	int pi;
 
 	if (low < high)
 	{
-		pi = partition(arr, low, high, size);
+		pi = partition(array, low, high, size);
 
-		quicksort_recursive(arr, low, pi - 1, size);
-		quicksort_recursive(arr, pi + 1, high, size);
+		quicksort_recursive(array, low, pi - 1, size);
+		quicksort_recursive(array, pi + 1, high, size);
 	}
 }
 
