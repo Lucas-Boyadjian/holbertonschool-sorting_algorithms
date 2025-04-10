@@ -81,9 +81,9 @@ void quicksort_recursive(int *arr, int low, int high, size_t size)
 * @size: size of the array
 */
 
-void quick_sort(int *arr, size_t size)
+void quick_sort(int *array, size_t size)
 {
-	if (arr == NULL || size < 2)
+	if (array == NULL || size < 2)
 		return;
-	quicksort_recursive(arr, 0, size - 1, size);
+	quicksort_recursive(array, 0, size - 1, size);
 }
